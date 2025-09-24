@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passaporte</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+            text-align: center;
+        }
+        input {
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Passaporte</h1>
+    <p>Digite aqui seu país de origem:</p>
+    <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Verificar" onclick="ver()">
+    <div id="ver"></div>
+
+    <script>
+        function ver() {
+        var país = document.getElementById('txtp').value
+        var ver = document.getElementById('ver')
+        ver.innerHTML = `<p>Você está vivendo em <strong>${país}🌍</strong></p>`
+        if (país.toLowerCase() == "brasil") {
+            ver.innerHTML += `Você é brasileiro!`
+        } else {
+            ver.innerHTML += `Você é estrangeiro!`
+        }
+    }
+
+    </script>
+</body>
+</html> 
