@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+        <style>
+        body {
+            font: normal 20pt Arial;
+            background-color: rgb(220, 174, 231);
+            color: rgb(134, 63, 134);
+            text-align: center;
+        }
+        h1 {
+            color: rgb(133, 25, 133);
+        }
+        input {
+            font: normal 20pt Arial;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade🌎✨</h1>
+    <p>🌸 De onde você é? 🌸</p>
+    <input type="text" name="txtp" id="txtp">
+    <input type="button" value="Verificar" onclick="ver()">
+    <div id="ver"></div>
+
+    <script>
+        function ver() {
+            var país = document.getElementById('txtp').value
+            var resultado = document.getElementById('ver')
+            resultado.innerHTML = `<p>Você vive em ${país} 😲</p>`
+            if (país.trim().toLowerCase() == "brasil") {
+                resultado.innerHTML += `Você é brasileiro!`
+            } else {
+                resultado.innerHTML +=`Você é estrangeiro!`
+            }
+        }
+    </script>
+</body>
+</html>

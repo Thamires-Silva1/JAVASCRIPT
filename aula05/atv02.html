@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positivo, negativo ou nulo?</title>
+</head>
+<body>
+    <h1>Positivo, negativo ou nulo?</h1>
+    <p>Por favor, digite um número e irei dizer se este número é positivo, negativo ou zero!</p>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="button" value="Verificar" onclick="ver()">
+    <div id="ver"></div>
+
+    <script>
+        function ver() {
+            var num = Number(document.getElementById('txtn1').value)
+            var resultado = document.getElementById('ver')
+            if (num > 0) {
+                resultado.innerHTML =`O número ${num} é positivo!`
+            } else {
+                if (num < 0) {
+                    resultado.innerHTML =`O número ${num} é negativo!`
+                } else
+                resultado.innerHTML =`O número ${num} é nulo!`
+            }
+        }
+
+    </script>
+</body>
+</html>
