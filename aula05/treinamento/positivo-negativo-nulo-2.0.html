@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positivo, negativo ou nulo?</title>
+    <style>
+        body {
+            background-color: rgb(220, 174, 231);
+            color: rgb(134, 63, 134);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font: normal 20pt;
+            text-align: center;
+        }
+        h1 {
+            color: rgb(133, 25, 133);
+        }
+        input {
+            font: normal 20pt Georgia;
+            width: 150px;
+        }
+        #ver {
+    transition: color 1s ease;
+    font-weight: bold;
+    font-size: 22pt;
+}
+    </style>
+</head>
+<body>
+    <h1>Positivo, negativo ou nulo?</h1>
+    <p>Digite um número e direi-lhe se é positivo, negativo ou nulo 🐇</p>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="button" value="Verificar" onclick="ver()">
+    <div id="ver"></div>
+    <script>
+        function ver(){
+        var num = Number(document.getElementById('txtn1').value)
+        var resultado = document.getElementById('ver')
+        if (document.getElementById('txtn1').value === "") {
+            resultado.innerHTML = "Por favor, digite um número! 🌸"
+            resultado.style.color = "red";
+            return;
+        }
+        if (num > 0) {
+            resultado.innerHTML = `Positivo 🌸`
+            resultado.style.color = "green";
+        } else {
+            if (num < 0) {
+                resultado.innerHTML = `Negativo 🌸`
+                resultado.style.color = "red";
+            } else {
+                resultado.innerHTML = `Nulo 🌸`
+                resultado.style.color = "blue";
+            }
+        }
+        }
+    </script>
+</body>
+</html>
